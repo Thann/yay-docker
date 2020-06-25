@@ -20,4 +20,4 @@ RUN pacman -U /app/yay*.tar.xz --noconfirm
 RUN echo "build ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 USER build
 
-ENTRYPOINT ["yay", "-Sy", "--noconfirm"]
+ENTRYPOINT ["yay", "-Syu", "--noconfirm"]
