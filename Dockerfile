@@ -15,8 +15,8 @@ RUN makepkg
 
 FROM base AS build
 
-COPY --from=yay /app/yay*.tar.xz /app/
-RUN pacman -U /app/yay*.tar.xz --noconfirm
+COPY --from=yay /app/yay*.pkg.* /app/
+RUN pacman -U /app/yay*.pkg.* --noconfirm
 RUN echo "build ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 USER build
 
