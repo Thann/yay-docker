@@ -20,4 +20,4 @@ RUN pacman -U /app/yay*.pkg.* --noconfirm
 RUN echo "build ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 USER build
 
-ENTRYPOINT ["yay", "-Syu", "--noconfirm"]
+ENTRYPOINT ["yay", "-Syu", "--noconfirm", "--ignore", "yay-git"]
