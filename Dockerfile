@@ -3,7 +3,8 @@ FROM archlinux:latest AS base
 
 RUN pacman -Sy archlinux-keyring --noconfirm; pacman -Syu base-devel --noconfirm
 RUN useradd -m --shell=/bin/false build && usermod -L build
-RUN mkdir /app; chmod 777 /app
+RUN install -d -m 0755 -o build -g users /home/build/.cache/
+RUN mkdir -m 777 /app
 WORKDIR /app
 
 FROM base AS yay
